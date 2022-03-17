@@ -12,7 +12,16 @@ module.exports = {
         builder: 'storybook-builder-vite',
     },
     async viteFinal(config, { configType }) {
-        // customize the Vite config here
-        return config;
+
+        return {...config, optimizeDeps: {...config.optimizeDeps, include: [
+            ...config.optimizeDeps.include, 
+            '@storybook/react > doctrine',
+            '@storybook/client-api > fast-deep-equal',
+            '@storybook/client-api > lodash/isPlainObject',
+            '@storybook/client-api > lodash/mapValues',
+            '@storybook/client-api > ts-dedent',
+            '@storybook/addon-docs > doctrine',
+            '@storybook/react > react-element-to-jsx-string > @base2/pretty-print-object',
+        ]}};
     },
 };
