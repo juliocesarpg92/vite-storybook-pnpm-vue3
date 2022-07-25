@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  qmobile_poc:
+    image: node16:dev
+    working_dir: /app
+    volumes:
+      - ..:/app
+      - npm-global:/usr/local/share/npm-global
+    ports:
+      - "5173:5173"
+      - "6006:6006" #storybook
+      - "9005:9005" #firebase login
+      - "4000:4000" #majestic (jest ui)
+    command: ./qmobile-poc-docker/entrypoint_dev.sh
+    stdin_open: true
+    container_name: qmobile_poc_container
+
+volumes:
+  # para crear el volumen, el sistema se encarga de darle un path
+  #npm-global:
+  # cuando el volumen está creado
+  npm-global:
+    external: true
