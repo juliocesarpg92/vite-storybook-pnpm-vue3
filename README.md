@@ -7,7 +7,7 @@ Forked from https://github.com/IanVS/vite-storybook-pnpm-shame, this repo should
 ```
 rm -rf node_modules
 pnpm install
-pnpm run storybook
+pnpm storybook
 ```
 
 ## Changes made
@@ -35,3 +35,8 @@ To get things working, I had to add a fair number of `devDependencies` so that p
 ```
 
 This commit has those dependency changes: https://github.com/jdk2pq/vite-storybook-pnpm-vue/commit/9ccdf744827b7d539440849f545df50c5675c981
+
+## VSCode plugins installed
+* [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss)
+* [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+* [Git Graph]()
