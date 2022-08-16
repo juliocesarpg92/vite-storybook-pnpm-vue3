@@ -6,12 +6,12 @@ export default {
     component: BaseContainer
 } as Meta<typeof BaseContainer>
 
-export const Default: StoryFn<typeof BaseContainer> = () => ({
-    components: {BaseContainer},
-    template: '<BaseContainer></BaseContainer>'
-})
-
 export const full: StoryFn<typeof BaseContainer> = () => ({
     components: {BaseContainer},
     template: '<BaseContainer width="full"></BaseContainer>'
+})
+
+export const half: StoryFn<typeof BaseContainer> = () => ({
+    components: {BaseContainer},
+    template: '<BaseContainer width="half"></BaseContainer>'
 })

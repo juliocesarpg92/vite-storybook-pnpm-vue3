@@ -1,5 +1,5 @@
 <template>
-  <div class="container bg-gray-100 w-full h-full">
+  <div class="container bg-gray-100 h-full" :class="containerClass()">
     <!-- header -->
     <div class="border-b">
       <slot name="header "> header </slot>
@@ -12,15 +12,30 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from "vue";
+
+export default defineComponent({
   name: "BaseContainer",
-  props:{
-    width:  {
+  props: {
+    width: {
       type: String,
-      default: 'full',
-      valida
-    } 
+      default: "full",
+      validator: (val: string) => {
+        return ["full", "half"].includes(val);
+      },
+    },
   },
-  setup() {},
-};
+  setup(props) {
+    const containerClass = () => {
+      return {
+        "w-full": props.width === "full",
+        "w-1/2": props.width === "half",
+      };
+    };
+
+    return {
+      containerClass,
+    };
+  },
+});
 </script>
