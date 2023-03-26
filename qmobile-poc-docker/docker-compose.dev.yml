@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   qmobile_poc:
-    image: node16:dev
+    image: node18:dev
     working_dir: /app
     volumes:
       - ..:/app
